@@ -7,9 +7,13 @@ Sources for the official [Vaadin](https://vaadin.com) demo application: http://d
 
 Running the App
 ==
+Run 'mvn -Pproduction-mode jetty:run' to run in a local jettty. Open in localhost:8080
+
 Run the Maven 'install' target and deploy the resulting WAR file to your Java application server.
 
-*Note*: You need a [Rotten Tomatoes API key](http://developer.rottentomatoes.com) and a connection to the internet to run the app. Insert your own API key here: [DummyDataProvider.java#L122](https://github.com/vaadin/dashboard-demo/blob/master/src/main/java/com/vaadin/demo/dashboard/data/dummy/DummyDataProvider.java#L122)
+You need a license for Vaadin Charts to compile the widgetset. You can get a free 30 day trial license by going to https://vaadin.com/directory#addon/vaadin-charts and clicking the orange "Free trial key" button. It gives you a trial key. [See the help section](https://vaadin.com/directory/help/installing-cval-license) which shows you how to install the key.
+
+Basically you need to create a file name ".vaadin.charts.developer.license" in your HOME directory, and place the key there.
 
 Run 'mvn -Pproduction-mode verify' to run the Vaadin TestBench tests. 
 
@@ -19,4 +23,4 @@ Licenses
 ==
 The source code is released under Apache 2.0.
 
-The application uses the [Vaadin Charts](https://vaadin.com/charts) add-on, which is released under the Commercial Vaadin Addon License: https://vaadin.com/license/cval-2.0
+The application uses the [Vaadin Charts 2](https://vaadin.com/charts) add-on, which is released under the Commercial Vaadin Addon License: https://vaadin.com/license/cval-3

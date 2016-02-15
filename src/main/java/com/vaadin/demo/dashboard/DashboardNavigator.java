@@ -27,7 +27,8 @@ public class DashboardNavigator extends Navigator {
     public DashboardNavigator(final ComponentContainer container) {
         super(UI.getCurrent(), container);
 
-        if (TRACKER_ID != null) {
+        String host = getUI().getPage().getLocation().getHost();
+        if (TRACKER_ID != null && host.endsWith("demo.vaadin.com")) {
             initGATracker(TRACKER_ID);
         }
         initViewChangeListener();
@@ -36,7 +37,7 @@ public class DashboardNavigator extends Navigator {
     }
 
     private void initGATracker(final String trackerId) {
-        tracker = new GoogleAnalyticsTracker(trackerId, "none");
+        tracker = new GoogleAnalyticsTracker(trackerId, "demo.vaadin.com");
 
         // GoogleAnalyticsTracker is an extension add-on for UI so it is
         // initialized by calling .extend(UI)
